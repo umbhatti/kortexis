@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kortexis</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use the 'Inter' font and a dark color palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-dark': '#030712', // Deepest black/gray
+                        'accent-blue': '#22D3EE', // Cyan-400
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Apply smooth transition to all elements for a premium feel */
+        * {
+            transition: all 0.3s ease-in-out;
+        }
+        /* Custom neon effect for the primary button */
+        .neon-button {
+            box-shadow: 0 0 5px #22D3EE, 0 0 10px #22D3EE;
+        }
+        /* Ensure canvas is flexible within its container */
+        #feaCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans text-white min-h-screen flex flex-col justify-between bg-primary-dark">
+
+    <!-- Main Content Container -->
+    <main class="flex-grow flex flex-col items-center justify-center p-4">
+
+        <!-- Header / Logo Placeholder -->
+        <header class="w-full max-w-5xl flex justify-between items-center py-6 px-4 absolute top-0 left-0 right-0">
+            <!-- Minimalist Logo Placeholder -->
+            <div class="text-accent-blue text-2xl font-extrabold tracking-wider opacity-75">
+                // Koretexis
+            </div>
+            <!-- Empty space for symmetry -->
+            <div class="text-sm text-gray-400"></div>
+        </header>
+
+        <!-- 1. Primary Headline & Tagline -->
+        <div class="text-center max-w-4xl pt-24 pb-16">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter mb-4">
+                Building something exciting...
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-400 mt-4 max-w-3xl mx-auto">
+               We are engineering simulation experts using machine learning to revolutionize how products are made.
+            </p>
+        </div>
+
+		<!-- 2. Visual Placeholder (FEA Animation) -->
+        <div class="max-w-5xl w-full p-4 mb-20 flex justify-center items-center min-h-48 sm:min-h-72 lg:min-h-96">    
+            <img 
+                src="assets/fea-animation.gif" 
+                alt="Visualization of proprietary material simulation technology"
+                class="w-full h-full object-contain border-2 border-accent-blue/50 rounded-xl bg-gray-900 shadow-2xl"
+            >
+        </div>
+
+        <!-- 3. The Signal: Exclusivity Form (Soft CTA) -->
+        <div class="w-full max-w-md p-6 bg-gray-900/70 border border-gray-800 rounded-xl shadow-2xl backdrop-blur-sm">
+            <h3 class="text-center text-xl font-medium text-gray-200 mb-4">Contact Us</h3>
+            <p class="text-center text-sm text-gray-500 mb-6">
+                Please email info@kortexis.com for any queries.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 px-4 text-xs text-gray-600 border-t border-gray-900/50">
+        &copy; 2025. Kortexis Ltd. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

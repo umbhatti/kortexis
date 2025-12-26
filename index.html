@@ -22,27 +22,15 @@
             }
         }
     </script>
-    <style>
-        /* Apply smooth transition to all elements for a premium feel */
-        * {
-            transition: all 0.3s ease-in-out;
-        }
-        /* Custom neon effect for the primary button */
-        .neon-button {
-            box-shadow: 0 0 5px #22D3EE, 0 0 10px #22D3EE;
-        }
-        /* Ensure canvas is flexible within its container */
-        #feaCanvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-    </style>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.css">
 </head>
 <body class="font-sans text-white min-h-screen flex flex-col justify-between bg-primary-dark">
 
     <!-- Main Content Container -->
-    <main class="flex-grow flex flex-col items-center justify-center p-4">
+    <main class="flex-grow flex flex-col items-center justify-center p-4 pb-12">
 
         <!-- Header / Logo Placeholder -->
         <header class="w-full max-w-5xl flex justify-between items-center py-6 px-4 absolute top-0 left-0 right-0">
@@ -55,7 +43,7 @@
         </header>
 
         <!-- 1. Primary Headline & Tagline -->
-        <div class="text-center max-w-4xl pt-24 pb-16">
+        <div class="text-center max-w-4xl pt-24 pb-6">
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter mb-4">
                 Advanced Simulation Software for Enterprise Engineering
             </h1>
@@ -65,7 +53,7 @@
         </div>
 
 		<!-- 2. FEA Animation -->
-        <div class="max-w-5xl w-full p-4 mb-20 flex justify-center items-center min-h-48 sm:min-h-72 lg:min-h-96">
+        <div class="max-w-5xl w-full p-4 mb-12 flex justify-center items-center min-h-48 sm:min-h-72 lg:min-h-96">
             <video 
                 autoplay 
                 loop 
@@ -83,21 +71,123 @@
 
         <!-- 3. Contact -->
         <div class="w-full max-w-md p-6 bg-gray-900/70 border border-gray-800 rounded-xl shadow-2xl backdrop-blur-sm">
-            <h3 class="text-center text-xl font-medium text-gray-200 mb-4">Contact Us</h3>
-            <p class="text-center text-sm text-gray-500 mb-6">
-                Please email info@kortexis.com for any queries.
-            </p>
+            <h3 class="text-center text-xl font-medium text-gray-200 mb-4">Contact us for any queries</h3>
+
+            <form id="contactForm" class="text-center text-sm text-gray-500 mb-6 relative">
+
+                <input type="hidden" name="access_key" value="36e80de9-7ae6-47d6-84fa-740543bd5d79">
+            
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Enter your email" 
+                    required
+                    class="mb-2" 
+                >
+
+                <button type="submit" id="submitBtn">Submit</button>
+            
+                <p id="result" class="mt-2 text-xs font-medium hidden"></p>
+            
+            </form>
+
+            <script>
+            const form = document.getElementById('contactForm');
+            const result = document.getElementById('result');
+            const btn = document.getElementById('submitBtn');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // 1. Stop the page from refreshing
+            
+                // 2. Change button text to indicate loading
+                const originalText = btn.innerText;
+                btn.innerText = "Sending...";
+                btn.disabled = true;
+            
+                // 3. Prepare the data
+                const formData = new FormData(form);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+            
+                // 4. Send data via Fetch API
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            // SUCCESS
+                            result.innerHTML = "Thanks! We'll be in touch.";
+                            result.classList.remove("hidden", "text-red-500");
+                            result.classList.add("text-accent-blue"); // Use your teal color
+                            form.reset(); // Clear the input field
+                        } else {
+                            // ERROR (e.g. invalid email)
+                            console.log(response);
+                            result.innerHTML = json.message;
+                            result.classList.remove("hidden", "text-accent-blue");
+                            result.classList.add("text-red-500");
+                        }
+                    })
+                    .catch(error => {
+                        // NETWORK ERROR
+                        console.log(error);
+                        result.innerHTML = "Something went wrong. Please try again.";
+                        result.classList.remove("hidden");
+                        result.classList.add("text-red-500");
+                    })
+                    .then(function() {
+                        // RESET BUTTON
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+
+                        // Optional: Hide the success message after 5 seconds
+                        setTimeout(() => {
+                            result.classList.add("hidden");
+                        }, 5000);
+                    });
+            });
+            </script>
+
         </div>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center py-4 px-4 text-xs text-gray-600 border-t border-gray-900/50">
-        &copy; 2025 Kortexis Ltd. All Rights Reserved. | Kortexis Ltd is registered in England and Wales. Company No. 16900425. Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.
+    <footer class="stealth-footer">
+        <div class="footer-container">
+          
+            <div class="footer-legal">
+                <p>
+                  <strong>Kortexis Ltd</strong> is registered in England and Wales.
+                </p>
+                <p>
+                  Company No. 16900425 <span class="separator">|</span> 
+                  Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ
+                </p>
+                
+                <p class="copyright">
+                  &copy; <script>document.write(new Date().getFullYear())</script> Kortexis Ltd. All rights reserved.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="mailto:info@kortexis.com">Contact</a>
+            </div>
+      
+        </div>
     </footer>
 
+    <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.js"></script>
+    <script defer src="cookie-init.js"></script>
+
 </body>
-
 </html>
-
-

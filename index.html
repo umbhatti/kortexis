@@ -48,7 +48,7 @@
                 Advanced Simulation Software for Enterprise Engineering
             </h1>
             <p class="text-xl sm:text-2xl text-gray-400 mt-4 max-w-3xl mx-auto">
-               We provide high-fidelity computational solutions for the manufacturing sector. Currently in R&D phase.
+                Replacing hours of CPU-based FEA with milliseconds of physics-informed GPU inference.
             </p>
         </div>
 
@@ -69,9 +69,79 @@
             </video>
         </div>
 
-        <!-- 3. Contact -->
+        <!-- 3. Product & Team -->
+        <div class="max-w-5xl w-full px-4 mb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-gray-900/40 p-8 rounded-2xl border border-gray-800">
+                <h3 class="text-accent-blue font-bold text-lg mb-4 tracking-wide uppercase">The Bottleneck</h3>
+                <h2 class="text-3xl font-bold mb-4">The Latency Trap</h2>
+                <p class="text-gray-400 leading-relaxed">
+                    High-fidelity solvers like LS-DYNA require massive CPU clusters running for several hours to converge for a single crash event. This limits engineers to simulating &lt;5% of the total design space, leaving innovation potential untapped.
+                </p>
+            </div>
+            
+            <div class="bg-gray-900/40 p-8 rounded-2xl border border-gray-800">
+                <h3 class="text-accent-blue font-bold text-lg mb-4 tracking-wide uppercase">The Solution</h3>
+                <h2 class="text-3xl font-bold mb-4">Real-Time Inference</h2>
+                <p class="text-gray-400 leading-relaxed">
+                    We provide a Universal Surrogate Solver that predicts deformation and stress fields in milliseconds. By enforcing conservation laws directly into the loss function, we ensure engineering-grade reliability for safety-critical applications.
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-5xl w-full px-4 mb-24 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Physics-Informed Architecture</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="p-6 bg-gray-900/20 border border-gray-800 rounded-xl">
+                    <div class="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Physics-Accurate</h3>
+                    <p class="text-sm text-gray-400">Unlike generic AI, our architecture embeds Partial Differential Equations (PDEs) to penalise violations of mass or energy conservation.</p>
+                </div>
+                <div class="p-6 bg-gray-900/20 border border-gray-800 rounded-xl">
+                    <div class="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Instant Feedback</h3>
+                    <p class="text-sm text-gray-400">Achieve 3x cost reduction and real-time iteration velocity, replacing overnight wait times with instant design validation.</p>
+                </div>
+                <div class="p-6 bg-gray-900/20 border border-gray-800 rounded-xl">
+                    <div class="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Secure & Private</h3>
+                    <p class="text-sm text-gray-400">Architected for Federated Learning, allowing models to be trained on proprietary OEM data without IP leakage.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-5xl w-full px-4 mb-24">
+            <h2 class="text-3xl font-bold mb-12 text-center">Leadership</h2>
+            <div class="bg-gray-900/60 rounded-2xl p-8 border border-gray-800 flex flex-col md:flex-row items-center md:items-start gap-8">
+                
+                <div class="w-24 h-24 md:w-32 md:h-32 bg-gray-800 rounded-full flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-accent-blue/20 shadow-lg">
+                    <img src="assets/profile-picture.jpg" alt="Profile Picture" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="text-4xl font-bold text-gray-500 hidden">UB</span>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white">Usman Bhatti</h3>
+                    <p class="text-accent-blue font-medium mb-4">Founder & Lead Architect</p>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        FEA domain expert specialising in crashworthiness engineering. Former Seinor Engineer at JLR with over 10 years of experience in automotive simulation.
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3 text-xs font-mono text-gray-500">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full border border-gray-700">MEng Aerospace Engineering (Cambridge)</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full border border-gray-700">MBA (LBS)</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full border border-gray-700">Ex-JLR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Contact -->
         <div class="w-full max-w-md p-6 bg-gray-900/70 border border-gray-800 rounded-xl shadow-2xl backdrop-blur-sm">
-            <h3 class="text-center text-xl font-medium text-gray-200 mb-4">Contact us for any queries</h3>
+            <h3 class="text-center text-xl font-medium text-gray-200 mb-4">Request Technical Access</h3>
 
             <form id="contactForm" class="text-center text-sm text-gray-500 mb-6 relative">
 
@@ -166,11 +236,9 @@
             <div class="footer-legal">
                 <p>
                   <strong>Kortexis Ltd</strong> is registered in England and Wales.
-				</p>
-				<p>
-					Company No. 16900425
                 </p>
                 <p>
+                  Company No. 16900425 <span class="separator">|</span> 
                   Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ
                 </p>
                 
@@ -192,6 +260,4 @@
     <script defer src="cookie-init.js"></script>
 
 </body>
-
 </html>
-

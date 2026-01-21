@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kortexis | Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: { colors: { 'primary-dark': '#030712', 'accent-blue': '#22D3EE' }, fontFamily: { sans: ['Inter', 'sans-serif'] } }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary-dark text-gray-300 font-sans">
+    
+    <nav class="w-full max-w-5xl mx-auto flex justify-between items-center py-6 px-4 absolute top-0 left-0 right-0 z-50">
+        <div class="text-accent-blue text-2xl font-mono font-medium tracking-wider opacity-90">
+            <a href="index.html">KORTEXIS</a>
+        </div>
+        
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+            <a href="index.html" class="hover:text-accent-blue transition">Product</a>
+            <a href="technology.html" class="hover:text-accent-blue transition">Technology</a>
+            <a href="about.html" class="hover:text-accent-blue transition">Company</a>
+            <a href="mailto:info@kortexis.com" class="hover:text-white transition">Contact</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto pt-32 px-4 pb-20">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-8">Our Architecture</h1>
+        <p class="text-xl mb-12 leading-relaxed">
+            Kortexis overcomes the limitations of traditional Finite Element Analysis (FEA) by deploying a proprietary physics-informed inference engine.
+        </p>
+
+        <div class="mb-16 border-l-2 border-accent-blue pl-6">
+            <h2 class="text-2xl font-bold text-white mb-4">Physics-Informed Neural Networks (PINNs)</h2>
+            <p class="mb-4">
+                Standard deep learning models often "hallucinate" physics. Our architecture embeds partial differential equations (PDEs) directly into the loss function.
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-400">
+                <li><strong>Conservation Laws:</strong> The model is penalized during training if it violates mass, momentum, or energy conservation principles.</li>
+                <li><strong>Mesh Graph Networks:</strong> We utilize geometric deep learning to predict stress fields across complex, non-uniform 3D topologies.</li>
+            </ul>
+        </div>
+
+        <div class="mb-16 border-l-2 border-gray-700 pl-6">
+            <h2 class="text-2xl font-bold text-white mb-4">Federated Learning & Security</h2>
+            <p class="mb-4">
+                We address the "Black Box" problem of automotive data silos using a decentralized training approach.
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-400">
+                <li><strong>Gradient Aggregation:</strong> Proprietary CAD data never leaves the OEM's secure infrastructure. Only model weight updates are transmitted to the global solver.</li>
+                <li><strong>Edge Inference:</strong> Optimized for low-latency deployment on standard workstation GPUs.</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

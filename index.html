@@ -32,15 +32,19 @@
     <!-- Main Content Container -->
     <main class="flex-grow flex flex-col items-center justify-center p-4 pb-12">
 
-        <!-- Header / Logo Placeholder -->
-        <header class="w-full max-w-5xl flex justify-between items-center py-6 px-4 absolute top-0 left-0 right-0">
-            <!-- Minimalist Logo Placeholder -->
-            <div class="text-accent-blue text-2xl font-roboto font-mono font-medium tracking-wider opacity-75">
-                Kortexis
+        <!-- Navigation -->
+        <nav class="w-full max-w-5xl mx-auto flex justify-between items-center py-6 px-4 absolute top-0 left-0 right-0 z-50">
+            <div class="text-accent-blue text-2xl font-mono font-medium tracking-wider opacity-90">
+                <a href="index.html">KORTEXIS</a>
             </div>
-            <!-- Empty space for symmetry -->
-            <div class="text-sm text-gray-400"></div>
-        </header>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="index.html" class="hover:text-accent-blue transition">Product</a>
+                <a href="technology.html" class="hover:text-accent-blue transition">Technology</a>
+                <a href="about.html" class="hover:text-accent-blue transition">Company</a>
+                <a href="mailto:info@kortexis.com" class="hover:text-white transition">Contact</a>
+            </div>
+        </nav>
 
         <!-- 1. Primary Headline & Tagline -->
         <div class="text-center max-w-4xl pt-24 pb-6">
@@ -123,28 +127,16 @@
             </div>
         </div>
 
-        <div class="max-w-5xl w-full px-4 mb-24">
-            <h2 class="text-3xl font-bold mb-12 text-center">Leadership</h2>
-            <div class="bg-gray-900/60 rounded-2xl p-8 border border-gray-800 flex flex-col md:flex-row items-center md:items-start gap-8">
-                
-                <div class="w-24 h-24 md:w-32 md:h-32 bg-gray-800 rounded-full flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-accent-blue/20 shadow-lg">
-                    <img src="assets/profile-picture.jpg" alt="Profile Picture" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="text-4xl font-bold text-gray-500 hidden">UB</span>
-                </div>
-                
-                <div class="text-center md:text-left">
-                    <h3 class="text-2xl font-bold text-white">Usman Bhatti</h3>
-                    <p class="text-accent-blue font-medium mb-4">Founder & Lead Architect</p>
-                    <p class="text-gray-400 leading-relaxed mb-4">
-                        FEA domain expert specialising in crashworthiness engineering. Former Senior Engineer at JLR with over 10 years of experience in automotive simulation.
-                    </p>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-3 text-xs font-mono text-gray-500">
-                        <span class="px-3 py-1 bg-gray-800 rounded-full border border-gray-700">MEng Aerospace Engineering (Cambridge)</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full border border-gray-700">MBA (LBS)</span>
-                        <span class="px-3 py-1 bg-gray-800 rounded-full border border-gray-700">Ex-JLR</span>
-                    </div>
-                </div>
-            </div>
+        <div class="max-w-5xl w-full px-4 mb-24 text-center">
+            <h2 class="text-3xl font-bold mb-6">Leadership</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                Built by engineers, for engineers. Kortexis is led by deep domain expertise in automotive simulation and crashworthiness engineering.
+            </p>
+
+            <a href="about.html" class="inline-flex items-center text-accent-blue font-medium hover:text-white transition group">
+                Read Founder Profile 
+                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
         </div>
 
         <!-- 4. Contact -->

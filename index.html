@@ -32,202 +32,146 @@
     <!-- Main Content Container -->
     <main class="flex-grow flex flex-col items-center justify-center p-4 pb-12">
 
-        <!-- Navigation -->
         <nav class="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center py-6 px-4 absolute top-0 left-0 right-0 z-50">
-                
-            <div class="text-accent-blue text-2xl font-mono font-medium tracking-wider opacity-90 mb-4 md:mb-0">
+             <div class="text-accent-blue text-2xl font-mono font-medium tracking-wider opacity-90 mb-4 md:mb-0">
                 <a href="index.html">KORTEXIS</a>
             </div>
-            
             <div class="flex space-x-6 md:space-x-8 text-sm font-medium text-gray-400">
                 <a href="index.html" class="hover:text-accent-blue transition">Product</a>
                 <a href="technology.html" class="hover:text-accent-blue transition">Technology</a>
                 <a href="about.html" class="hover:text-accent-blue transition">Company</a>
                 <a href="mailto:info@kortexis.com" class="hover:text-white transition">Contact</a>
             </div>      
-
         </nav>
 
-        <!-- 1. Primary Headline & Tagline -->
-        <div class="text-center max-w-4xl pt-24 pb-6">
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter mb-4">
-                Advanced Simulation Software for Enterprise Engineering
+        <div class="text-center max-w-4xl pt-32 pb-6">
+            <div class="flex justify-center mb-6">
+                <span class="px-3 py-1 rounded-full bg-gray-900 border border-gray-700 text-xs font-mono text-gray-400 uppercase tracking-widest">
+                    Enterprise Physics Platform
+                </span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter mb-6">
+                The Kortexis Solver Platform
             </h1>
-            <p class="text-xl sm:text-2xl text-gray-400 mt-4 max-w-3xl mx-auto">
-                Replacing hours of CPU-based FEA with milliseconds of physics-informed GPU inference.
+            
+            <p class="text-xl sm:text-2xl text-gray-400 mt-4 max-w-3xl mx-auto leading-relaxed">
+                A proprietary physics-informed AI software platform for real-time crash simulation. <br class="hidden md:block">
+                <span class="text-white font-medium block mt-2">Licensed to Automotive OEMs for Enterprise Deployment.</span>
             </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contactForm" class="px-8 py-3 bg-accent-blue text-primary-dark font-bold rounded-lg hover:bg-cyan-300 transition">
+                    Request Platform License
+                </a>
+                <a href="technology.html" class="px-8 py-3 border border-gray-700 text-white font-medium rounded-lg hover:border-gray-500 transition">
+                    Technical Specifications
+                </a>
+            </div>
         </div>
 
-		<!-- 2. FEA Animation -->
-        <div class="max-w-5xl w-full px-4 mb-12">
-            <div class="flex items-center gap-2 mb-4">
+        <div class="max-w-5xl w-full px-4 mb-20 mt-12">
+            <div class="border-t border-b border-gray-800 py-12">
+                <h3 class="text-accent-blue font-mono text-xs font-bold tracking-widest uppercase mb-12 text-center">Platform Workflow</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="pl-6 border-l border-gray-800 flex flex-col justify-start">
+                        <span class="text-5xl font-bold text-gray-800 mb-4 font-mono leading-none">01</span>
+                        <h4 class="text-white font-bold text-lg mb-2">Input</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">User uploads standard FEA mesh (.k/.pc) to local solver instance.</p>
+                    </div>
+                    <div class="pl-6 border-l border-gray-800 flex flex-col justify-start">
+                        <span class="text-5xl font-bold text-gray-800 mb-4 font-mono leading-none">02</span>
+                        <h4 class="text-white font-bold text-lg mb-2">Inference</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Kortexis Engine runs GPU-accelerated physics solving in milliseconds.</p>
+                    </div>
+                    <div class="pl-6 border-l border-gray-800 flex flex-col justify-start">
+                        <span class="text-5xl font-bold text-gray-800 mb-4 font-mono leading-none">03</span>
+                        <h4 class="text-white font-bold text-lg mb-2">Validation</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Automated conservation law checks and deformation field output.</p>
+                    </div>
+                    <div class="pl-6 border-l border-gray-800 flex flex-col justify-start">
+                        <span class="text-5xl font-bold text-gray-800 mb-4 font-mono leading-none">04</span>
+                        <h4 class="text-white font-bold text-lg mb-2">Integration</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Results exported via API (VTK/H5) to existing PLM workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-5xl w-full px-4 mb-24">
+            <div class="flex items-center gap-2 mb-4 justify-center">
                 <span class="bg-accent-blue/20 text-accent-blue px-3 py-1 rounded-full text-xs font-mono font-bold border border-accent-blue/30 uppercase tracking-wider">
-                    Product Demo v0.1 (Alpha)
+                    Solver Demo v0.1
                 </span>
                 <span class="text-gray-400 text-sm">Real-time Inference Environment</span>
             </div>
-        
+            
             <div class="relative w-full border-2 border-accent-blue/50 rounded-xl bg-gray-900 shadow-2xl overflow-hidden group">
-                <video 
-                    controls 
-                    poster="assets/demo-thumbnail.png"
-                    class="w-full h-auto"
-                >
+                 <video controls poster="assets/demo-thumbnail.png" class="w-full h-auto">
                     <source src="assets/product-demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
-
             <p class="text-sm text-gray-500 mt-2 font-mono text-center">
-                *Demo running on NVIDIA L4 Instance (GCP)
+                *Demo running on NVIDIA L4 Instance (GCP) via Streamlit
             </p>
+             <div class="text-center mt-6">
+                 <a href="https://kortexis-solver.streamlit.app" target="_blank" class="text-accent-blue hover:text-white underline text-sm">Launch Interactive Demo &rarr;</a>
+             </div>
         </div>
 
-        <!-- 3. Product & Team -->
-        <div class="max-w-5xl w-full px-4 mb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="bg-gray-900/40 p-8 rounded-2xl border border-gray-800">
-                <h3 class="text-accent-blue font-bold text-lg mb-4 tracking-wide uppercase">The Bottleneck</h3>
-                <h2 class="text-3xl font-bold mb-4">The Latency Trap</h2>
-                <p class="text-gray-400 leading-relaxed">
-                    High-fidelity solvers like LS-DYNA require massive CPU clusters running for several hours to converge for a single crash event. This limits engineers to simulating &lt;5% of the total design space, leaving innovation potential untapped.
+        <div class="max-w-5xl w-full px-4 mb-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-gray-900/20 p-8 rounded-2xl border border-gray-800">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Enterprise Deployment</h2>
+                <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                    The Kortexis Solver is architected as a containerized software artifact designed for secure, air-gapped environments. We support flexible deployment models to meet OEM data sovereignty requirements.
                 </p>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-center"><span class="text-accent-blue mr-3 font-bold">✓</span> On-Premise GPU Cluster Integration</li>
+                    <li class="flex items-center"><span class="text-accent-blue mr-3 font-bold">✓</span> Virtual Private Cloud (VPC) Deployment</li>
+                    <li class="flex items-center"><span class="text-accent-blue mr-3 font-bold">✓</span> Federated Learning Capable</li>
+                </ul>
             </div>
             
-            <div class="bg-gray-900/40 p-8 rounded-2xl border border-gray-800">
-                <h3 class="text-accent-blue font-bold text-lg mb-4 tracking-wide uppercase">The Solution</h3>
-                <h2 class="text-3xl font-bold mb-4">Real-Time Inference</h2>
-                <p class="text-gray-400 leading-relaxed">
-                    We provide a Universal Surrogate Solver that predicts deformation and stress fields in milliseconds. By enforcing conservation laws directly into the loss function, we ensure engineering-grade reliability for safety-critical applications.
-                </p>
-            </div>
-        </div>
-
-        <div class="max-w-5xl w-full px-4 mb-24 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Physics-Informed Architecture</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <div class="p-6 bg-gray-900/20 border border-gray-800 rounded-xl">
-                    <div class="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Physics-Accurate</h3>
-                    <p class="text-sm text-gray-400">Unlike generic AI, our architecture embeds Partial Differential Equations (PDEs) to penalise violations of mass or energy conservation.</p>
+            <div class="bg-gray-950 border border-gray-800 p-6 rounded-xl relative overflow-hidden font-mono text-xs shadow-inner">
+                <div class="text-gray-500 mb-3 border-b border-gray-800 pb-2 flex justify-between">
+                    <span>deployment_config.yaml</span>
+                    <span>YAML</span>
                 </div>
-                <div class="p-6 bg-gray-900/20 border border-gray-800 rounded-xl">
-                    <div class="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Instant Feedback</h3>
-                    <p class="text-sm text-gray-400">Achieve 3x cost reduction and real-time iteration velocity, replacing overnight wait times with instant design validation.</p>
-                </div>
-                <div class="p-6 bg-gray-900/20 border border-gray-800 rounded-xl">
-                    <div class="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Secure & Private</h3>
-                    <p class="text-sm text-gray-400">Architected for Federated Learning, allowing models to be trained on proprietary OEM data without IP leakage.</p>
+                <div class="leading-relaxed">
+                    <span class="text-purple-400">image:</span> <span class="text-green-400">"kortexis/solver:v2.4-release"</span><br>
+                    <span class="text-purple-400">license_key:</span> <span class="text-yellow-300">${OEM_LICENSE_KEY}</span><br>
+                    <span class="text-purple-400">infrastructure:</span><br>
+                    &nbsp;&nbsp;<span class="text-blue-400">provider:</span> <span class="text-green-400">"google-cloud"</span><br>
+                    &nbsp;&nbsp;<span class="text-blue-400">accelerator:</span> <span class="text-green-400">"nvidia-l4"</span><br>
+                    &nbsp;&nbsp;<span class="text-blue-400">replicas:</span> <span class="text-orange-400">8</span><br>
+                    <span class="text-purple-400">security:</span><br>
+                    &nbsp;&nbsp;<span class="text-blue-400">network_policy:</span> <span class="text-green-400">"deny-egress"</span>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-5xl w-full px-4 mb-24 text-center">
-            <h2 class="text-3xl font-bold mb-6">Leadership</h2>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-8">
-                Built by engineers, for engineers. Kortexis is led by deep domain expertise in automotive simulation and crashworthiness engineering.
-            </p>
+        <div class="w-full max-w-md mx-auto mb-20">
+            <div class="p-6 bg-gray-900/70 border border-gray-800 rounded-xl shadow-2xl backdrop-blur-sm">
+                <h3 class="text-center text-xl font-medium text-gray-200 mb-4">Request License Information</h3>
 
-            <a href="about.html" class="inline-flex items-center text-accent-blue font-medium hover:text-white transition group">
-                Read Founder Profile 
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
-        </div>
+                <div class="mb-6 p-3 bg-blue-900/20 border border-blue-900/50 rounded text-xs text-blue-200 text-center leading-relaxed">
+                    <strong>Note:</strong> Kortexis is an independent software vendor (ISV). We do not provide engineering consulting or custom simulation services.
+                </div>
 
-        <!-- 4. Contact -->
-        <div class="w-full max-w-md p-6 bg-gray-900/70 border border-gray-800 rounded-xl shadow-2xl backdrop-blur-sm">
-            <h3 class="text-center text-xl font-medium text-gray-200 mb-4">Request Technical Access</h3>
+                <form id="contactForm" class="text-center text-sm text-gray-500 relative">
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY"> <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
+                    <input type="email" name="email" placeholder="Enter corporate email" required
+                        class="w-full px-4 py-3 bg-gray-950 border border-gray-700 rounded-lg mb-4 text-white focus:outline-none focus:border-accent-blue transition">
 
-            <form id="contactForm" class="text-center text-sm text-gray-500 mb-6 relative">
-
-                <input type="hidden" name="access_key" value="36e80de9-7ae6-47d6-84fa-740543bd5d79">
-            
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-            
-                <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Enter your email" 
-                    required
-                    class="mb-2" 
-                >
-
-                <button type="submit" id="submitBtn">Submit</button>
-            
-                <p id="result" class="mt-2 text-xs font-medium hidden"></p>
-            
-            </form>
-
-            <script>
-            const form = document.getElementById('contactForm');
-            const result = document.getElementById('result');
-            const btn = document.getElementById('submitBtn');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault(); // 1. Stop the page from refreshing
-            
-                // 2. Change button text to indicate loading
-                const originalText = btn.innerText;
-                btn.innerText = "Sending...";
-                btn.disabled = true;
-            
-                // 3. Prepare the data
-                const formData = new FormData(form);
-                const object = Object.fromEntries(formData);
-                const json = JSON.stringify(object);
-            
-                // 4. Send data via Fetch API
-                fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: json
-                    })
-                    .then(async (response) => {
-                        let json = await response.json();
-                        if (response.status == 200) {
-                            // SUCCESS
-                            result.innerHTML = "Thanks! We'll be in touch.";
-                            result.classList.remove("hidden", "text-red-500");
-                            result.classList.add("text-accent-blue"); // Use your teal color
-                            form.reset(); // Clear the input field
-                        } else {
-                            // ERROR (e.g. invalid email)
-                            console.log(response);
-                            result.innerHTML = json.message;
-                            result.classList.remove("hidden", "text-accent-blue");
-                            result.classList.add("text-red-500");
-                        }
-                    })
-                    .catch(error => {
-                        // NETWORK ERROR
-                        console.log(error);
-                        result.innerHTML = "Something went wrong. Please try again.";
-                        result.classList.remove("hidden");
-                        result.classList.add("text-red-500");
-                    })
-                    .then(function() {
-                        // RESET BUTTON
-                        btn.innerText = originalText;
-                        btn.disabled = false;
-
-                        // Optional: Hide the success message after 5 seconds
-                        setTimeout(() => {
-                            result.classList.add("hidden");
-                        }, 5000);
-                    });
-            });
-            </script>
-
+                    <button type="submit" id="submitBtn" 
+                        class="w-full py-3 bg-accent-blue text-primary-dark font-bold rounded-lg hover:bg-cyan-300 transition">
+                        Contact Sales
+                    </button>
+                    <p id="result" class="mt-4 text-xs font-medium hidden"></p>
+                </form>
+            </div>
         </div>
 
     </main>

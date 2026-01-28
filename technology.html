@@ -3,60 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kortexis | Technology</title>
+    <title>Kortexis | Platform Architecture</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
-                extend: { colors: { 'primary-dark': '#030712', 'accent-blue': '#22D3EE' }, fontFamily: { sans: ['Inter', 'sans-serif'] } }
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Fira Code', 'monospace'] },
+                    colors: { 'primary-dark': '#030712', 'accent-blue': '#22D3EE', 'code-bg': '#111827' },
+                }
             }
         }
     </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { height: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #111827; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+    </style>
 </head>
-<body class="bg-primary-dark text-gray-300 font-sans">
+<body class="bg-primary-dark text-gray-300 font-sans antialiased selection:bg-accent-blue selection:text-primary-dark">
     
-    <nav class="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center py-6 px-4 absolute top-0 left-0 right-0 z-50">
-        
-        <div class="text-accent-blue text-2xl font-mono font-medium tracking-wider opacity-90 mb-4 md:mb-0">
-            <a href="index.html">KORTEXIS</a>
+    <nav class="w-full border-b border-gray-800 bg-primary-dark/95 backdrop-blur z-50 sticky top-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-6">
+            <div class="flex items-center gap-4 mb-4 md:mb-0">
+                <a href="index.html" class="text-accent-blue text-xl font-mono font-bold tracking-wider hover:opacity-80 transition">KORTEXIS</a>
+                <span class="text-gray-700 text-sm">/</span>
+                <span class="text-gray-400 text-sm font-medium">Platform Architecture</span>
+            </div>
+            <div class="flex space-x-6 text-xs font-medium text-gray-400">
+                <a href="index.html" class="hover:text-white transition">Back to Product</a>
+                <a href="mailto:info@kortexis.com" class="hover:text-white transition">Developer Contact</a>
+            </div>
         </div>
-        
-        <div class="flex space-x-6 md:space-x-8 text-sm font-medium text-gray-400">
-            <a href="index.html" class="hover:text-accent-blue transition">Product</a>
-            <a href="technology.html" class="hover:text-accent-blue transition">Technology</a>
-            <a href="about.html" class="hover:text-accent-blue transition">Company</a>
-            <a href="mailto:info@kortexis.com" class="hover:text-white transition">Contact</a>
-        </div>
-    
     </nav>
 
-    <main class="max-w-4xl mx-auto pt-32 px-4 pb-20">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-8">Our Architecture</h1>
-        <p class="text-xl mb-12 leading-relaxed">
-            Kortexis overcomes the limitations of traditional Finite Element Analysis (FEA) by deploying a proprietary physics-informed inference engine.
-        </p>
-
-        <div class="mb-16 border-l-2 border-accent-blue pl-6">
-            <h2 class="text-2xl font-bold text-white mb-4">Physics-Informed Neural Networks (PINNs)</h2>
-            <p class="mb-4">
-                Standard deep learning models often "hallucinate" physics. Our architecture embeds partial differential equations (PDEs) directly into the loss function.
-            </p>
-            <ul class="list-disc pl-5 space-y-2 text-gray-400">
-                <li><strong>Conservation Laws:</strong> The model is penalized during training if it violates mass, momentum, or energy conservation principles.</li>
-                <li><strong>Mesh Graph Networks:</strong> We utilize geometric deep learning to predict stress fields across complex, non-uniform 3D topologies.</li>
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row min-h-screen">
+        
+        <aside class="hidden md:block w-64 flex-shrink-0 border-r border-gray-800 py-12 pr-8 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto">
+            <h5 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">Core Architecture</h5>
+            <ul class="space-y-4 text-sm border-l border-gray-800 ml-1">
+                <li class="pl-4 border-l-2 border-accent-blue text-white font-medium">Geometric Deep Learning</li>
+                <li class="pl-4 border-l-2 border-transparent hover:border-gray-600 text-gray-400 hover:text-white transition"><a href="#physics">Physics-Informed Loss</a></li>
+                <li class="pl-4 border-l-2 border-transparent hover:border-gray-600 text-gray-400 hover:text-white transition"><a href="#stack">Infrastructure Stack</a></li>
             </ul>
-        </div>
-
-        <div class="mb-16 border-l-2 border-gray-700 pl-6">
-            <h2 class="text-2xl font-bold text-white mb-4">Federated Learning & Security</h2>
-            <p class="mb-4">
-                We address the "Black Box" problem of automotive data silos using a decentralized training approach.
-            </p>
-            <ul class="list-disc pl-5 space-y-2 text-gray-400">
-                <li><strong>Gradient Aggregation:</strong> Proprietary CAD data never leaves the OEM's secure infrastructure. Only model weight updates are transmitted to the global solver.</li>
-                <li><strong>Edge Inference:</strong> Optimized for low-latency deployment on standard workstation GPUs.</li>
+            <h5 class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-10 mb-6">Integration</h5>
+            <ul class="space-y-4 text-sm border-l border-gray-800 ml-1">
+                <li class="pl-4 border-l-2 border-transparent hover:border-gray-600 text-gray-400 hover:text-white transition"><a href="#api">Interface Design</a></li>
+                <li class="pl-4 border-l-2 border-transparent hover:border-gray-600 text-gray-400 hover:text-white transition"><a href="#benchmarks">Performance Goals</a></li>
             </ul>
+        </aside>
+
+        <main class="flex-grow md:pl-16 pt-12 pb-24 px-6 max-w-4xl">
+            
+            <header class="mb-12">
+                <div class="flex items-start gap-3 bg-blue-900/20 border border-blue-800/50 p-4 rounded-lg mb-8">
+                    <svg class="w-5 h-5 text-accent-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div>
+                        <h4 class="text-sm font-bold text-white">Development Status: Active R&D</h4>
+                        <p class="text-xs text-gray-400 mt-1">
+                            Kortexis is a deep-tech platform currently in the prototype validation phase. The architecture described below reflects the system design currently being implemented and tested using GPU cloud infrastructure.
+                        </p>
+                    </div>
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Graph Neural Networks for Non-Linear Structural Mechanics</h1>
+                <p class="text-lg leading-relaxed text-gray-400">
+                    Kortexis implements a discretized Lagrangian approach to predict nodal displacement in <span class="text-gray-100 font-medium">non-linear dynamic crash events</span>. By treating the Finite Element mesh as a graph structure \( G = (V, E) \), we perform message passing operations to approximate the solution of partial differential equations far more efficiently than traditional explicit time-integration approaches.
+                </p>
+            </header>
+
+            <div class="mb-16 p-8 bg-gray-900/50 rounded-xl border border-gray-800 flex justify-center items-center">
+                <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto opacity-80">
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#4B5563" />
+                        </marker>
+                    </defs>
+                    <rect x="50" y="50" width="100" height="100" rx="8" stroke="#374151" fill="#111827" stroke-width="2"/>
+                    <text x="100" y="105" text-anchor="middle" fill="#9CA3AF" font-family="monospace" font-size="12">Input Mesh</text>
+                    <line x1="150" y1="100" x2="210" y2="100" stroke="#4B5563" stroke-width="2" marker-end="url(#arrow)" />
+                    <rect x="220" y="50" width="160" height="100" rx="8" stroke="#22D3EE" fill="#164E63" fill-opacity="0.2" stroke-width="2"/>
+                    <text x="300" y="90" text-anchor="middle" fill="#22D3EE" font-family="sans-serif" font-weight="bold" font-size="14">GNN Encoder</text>
+                    <text x="300" y="115" text-anchor="middle" fill="#A5F3FC" font-family="monospace" font-size="10">Message Passing</text>
+                    <line x1="380" y1="100" x2="440" y2="100" stroke="#4B5563" stroke-width="2" marker-end="url(#arrow)" />
+                    <rect x="450" y="50" width="100" height="100" rx="8" stroke="#374151" fill="#111827" stroke-width="2"/>
+                    <text x="500" y="105" text-anchor="middle" fill="#9CA3AF" font-family="monospace" font-size="12">Def. Field</text>
+                </svg>
+            </div>
+
+            <section id="physics" class="mb-20">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span class="text-accent-blue font-mono mr-3 text-lg">01.</span>
+                    Physics-Informed Loss Landscape
+                </h2>
+                <p class="mb-6 text-gray-400">
+                    To mitigate "hallucinations" common in pure data-driven models, our training pipeline enforces physical constraints via the loss function. The total loss \(\mathcal{L}_{total}\) is defined as:
+                </p>
+                
+                <div class="bg-code-bg p-6 rounded-lg border border-gray-800 overflow-x-auto mb-6 shadow-inner">
+                    $$ \mathcal{L}_{total} = \lambda_{data} \mathcal{L}_{MSE} + \lambda_{phy} (\mathcal{L}_{mass} + \mathcal{L}_{momentum} + \mathcal{L}_{energy}) $$
+                </div>
+
+                <p class="mb-4 text-gray-400">
+                    This ensures that the predicted deformation fields respect the conservation of momentum at each time step \(t\):
+                </p>
+
+                <div class="bg-code-bg p-6 rounded-lg border border-gray-800 overflow-x-auto shadow-inner">
+                    $$ \rho \left( \frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v} \right) = -\nabla p + \nabla \cdot \mathbf{T} + \mathbf{f} $$
+                </div>
+            </section>
+
+            <section id="stack" class="mb-20">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span class="text-accent-blue font-mono mr-3 text-lg">02.</span>
+                    Proposed Infrastructure Stack
+                </h2>
+                <p class="mb-6 text-gray-400">
+                    The Kortexis platform is being architected to leverage Google Cloud's HPC capabilities. The current development roadmap targets the following stack:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-6 border border-gray-800 rounded-xl bg-gray-900/30">
+                        <h3 class="font-bold text-white mb-4 flex items-center">Training Pipeline (Planned Architecture)</h3>
+                        <ul class="text-sm space-y-3 text-gray-400">
+                            <li class="flex items-start"><span class="text-gray-600 mr-2">▸</span> <strong>Framework:</strong> PyTorch Geometric (PyG)</li>
+                            <li class="flex items-start"><span class="text-gray-600 mr-2">▸</span> <strong>Compute Targets:</strong> GCP A2/A3 VMs (NVIDIA A100/H100)</li>
+                            <li class="flex items-start"><span class="text-gray-600 mr-2">▸</span> <strong>Orchestration:</strong> Kubeflow Pipelines on GKE</li>
+                            <li class="flex items-start"><span class="text-gray-600 mr-2">▸</span> <strong>Data:</strong> TFRecord format on Cloud Storage</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 border border-gray-800 rounded-xl bg-gray-900/30">
+                        <h3 class="font-bold text-white mb-4 flex items-center">Inference Engine</h3>
+                        <ul class="text-sm space-y-3 text-gray-400">
+                            <li class="flex items-start"><span class="text-gray-600 mr-2">▸</span> <strong>Runtime:</strong> ONNX Runtime (TensorRT)</li>
+                            <li class="flex items-start"><span class="text-gray-600 mr-2">▸</span> <strong>API:</strong> FastAPI / gRPC with Protobuf</li>
+                            <li class="flex items-start"><span class="text-gray-600 mr-2">▸</span> <strong>Container:</strong> Docker (Distroless/Debian11)</li>
+                            <li class="flex items-start"><span class="text-gray-600 mr-2">▸</span> <strong>Hardware:</strong> Optimized for NVIDIA L4 Tensor Core</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="api" class="mb-20">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span class="text-accent-blue font-mono mr-3 text-lg">03.</span>
+                    Proposed API Interface
+                </h2>
+                <p class="mb-6 text-gray-400">
+                    We are designing a RESTful interface to allow future integration into PLM workflows. Below is the <strong>schema design</strong> for the inference endpoint currently under development.
+                </p>
+
+                <div class="bg-[#0d1117] rounded-lg border border-gray-800 font-mono text-xs overflow-hidden">
+                    <div class="bg-gray-800/50 px-4 py-2 border-b border-gray-700 flex justify-between items-center">
+                        <span class="text-gray-400">POST /v1/solvers/inference/crash (Draft)</span>
+                        <span class="text-xs text-gray-500">JSON</span>
+                    </div>
+                    <div class="p-4 overflow-x-auto custom-scrollbar">
+<pre><code class="language-json"><span class="text-purple-400">POST</span> /v1/solvers/inference/crash
+<span class="text-gray-500">Host: internal inference service (development environment)</span>
+<span class="text-gray-500">Authorization: Bearer ${DEV_LICENSE_KEY}</span>
+
+{
+  <span class="text-green-400">"mesh_id"</span>: <span class="text-blue-400">"uuid-8493-2023-x5"</span>,
+  <span class="text-green-400">"boundary_conditions"</span>: {
+    <span class="text-green-400">"velocity_initial"</span>: <span class="text-orange-400">15.6</span>, <span class="text-gray-500">// m/s (56km/h)</span>
+    <span class="text-green-400">"rigid_wall"</span>: <span class="text-blue-400">true</span>
+  },
+  <span class="text-green-400">"solver_settings"</span>: {
+     <span class="text-green-400">"precision"</span>: <span class="text-green-400">"fp16"</span>,
+     <span class="text-green-400">"mode"</span>: <span class="text-green-400">"prototype_fast"</span>
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="benchmarks" class="border-t border-gray-800 pt-12">
+                <h3 class="text-xl font-bold text-white mb-4">Performance Targets</h3>
+                <p class="text-gray-400 mb-6">
+                    Our initial internal validation aims to achieve the following performance metrics compared to legacy Explicit FEA solvers.
+                </p>
+                <div class="overflow-hidden rounded-lg border border-gray-800">
+                    <table class="w-full text-left text-sm text-gray-400">
+                        <thead class="bg-gray-900 text-gray-200 uppercase font-mono text-xs">
+                            <tr>
+                                <th class="px-6 py-4">Metric</th>
+                                <th class="px-6 py-4">Traditional FEA</th>
+                                <th class="px-6 py-4 text-accent-blue bg-accent-blue/5">Kortexis Goal</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800 bg-gray-900/20">
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Compute Time</td>
+                                <td class="px-6 py-4">Hours (CPU Cluster)</td>
+                                <td class="px-6 py-4 text-white font-bold">&lt; 1 Second (Target, GPU)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Infrastructure</td>
+                                <td class="px-6 py-4">On-Prem HPC</td>
+                                <td class="px-6 py-4 text-white font-bold">Cloud-Native Container</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Validation</td>
+                                <td class="px-6 py-4">Physics-Verified</td>
+                                <td class="px-6 py-4 text-white font-bold">Ongoing Internal Testing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="border-t border-gray-900 bg-gray-950 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+            <p>&copy; 2026 Kortexis Ltd. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <span class="text-gray-500">R&D Prototype Platform – Under Active Development</span>
+            </div>
         </div>
-    </main>
+    </footer>
 </body>
 </html>

@@ -27,10 +27,32 @@
 <body class="bg-primary-dark text-gray-300 font-sans antialiased selection:bg-accent-blue selection:text-primary-dark">
     
     <nav class="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center py-6 px-4 absolute top-0 left-0 right-0 z-50">
-         <div class="text-accent-blue text-2xl font-mono font-medium tracking-wider opacity-90 mb-4 md:mb-0">
-            <a href="index.html">KORTEXIS</a>
-        </div>
-        <div class="flex space-x-6 md:space-x-8 text-sm font-medium text-gray-400">
+        
+        <!-- KORTEXIS LOGO LOCKUP -->
+        <a href="index.html" class="flex items-center space-x-4 text-accent-blue hover:text-white transition duration-300 mb-4 md:mb-0 group">
+            
+            <!-- The Solid Cyan Mesh 'K' SVG Icon -->
+            <svg class="w-12 h-12 md:w-16 md:h-16 transform group-hover:scale-105 transition duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Structural Spine -->
+                <rect x="20" y="15" width="16" height="70" rx="2" fill="currentColor" />
+                <!-- Top Mesh Node -->
+                <circle cx="75" cy="25" r="6" fill="currentColor" />
+                <!-- Bottom Mesh Node -->
+                <circle cx="75" cy="75" r="6" fill="currentColor" />
+                <!-- Middle Intersection Node -->
+                <circle cx="45" cy="50" r="6" fill="currentColor" />
+                <!-- Connecting Wireframe Lines -->
+                <path d="M36 45 L70 28" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                <path d="M36 55 L70 72" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            </svg>
+            
+            <!-- The Wordmark -->
+            <span class="text-4xl md:text-5xl font-mono font-bold tracking-widest opacity-90 group-hover:opacity-100 transition-opacity">
+                KORTEXIS
+            </span>
+        </a>
+
+        <div class="flex space-x-6 md:space-x-8 text-sm font-medium text-gray-400 mt-4 md:mt-0">
             <a href="technology.html" class="hover:text-accent-blue transition">Technology</a>
             <a href="about.html" class="hover:text-accent-blue transition">Company</a>
             <a href="mailto:info@kortexis.com" class="hover:text-white transition">Contact</a>
@@ -39,18 +61,72 @@
 
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row min-h-screen">
         
-        <main class="flex-grow pt-24 pb-24 px-6 max-w-4xl mx-auto w-full">
+        <main class="flex-grow pt-40 pb-24 px-6 max-w-4xl mx-auto w-full">
             
-            <header class="mb-12">
+            <header class="mb-16">
                 <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">GeoTransolver Architecture</h1>
                 <p class="text-lg leading-relaxed text-gray-400">
                     Kortexis utilises a proprietary <span class="text-gray-100 font-medium">GeoTransolver architecture</span> to predict highly non-linear structural crash events directly on unstructured 3D meshes. Designed for seamless enterprise integration, the platform outputs standard <span class="text-gray-100 font-medium">D3PLOT files</span> for immediate validation in legacy tools, and integrates natively with <span class="text-gray-100 font-medium">NVIDIA Omniverse via OpenUSD</span> to enable real-time, collaborative 3D design iterations.
                 </p>
             </header>
 
-            <section id="stack" class="mb-20">
+            <!-- 01. Ground Truth Correlation -->
+            <section id="correlation" class="mb-20">
                 <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
                     <span class="text-accent-blue font-mono mr-3 text-lg">01.</span>
+                    Ground Truth Correlation
+                </h2>
+                <p class="text-gray-400 mb-8">
+                    Validation of the Kortexis surrogate model predicting B-Pillar Acceleration, Delta-V, and Dynamic Displacement in &lt;10ms vs. the OpenRadioss 2010 Toyota Yaris baseline.
+                </p>
+                <div class="rounded-xl border border-gray-800 bg-gray-900 overflow-hidden shadow-2xl">
+                    <img src="assets/demo_time_histories.png" alt="Ground Truth Correlation vs OpenRadioss" class="w-full h-auto">
+                </div>
+            </section>
+
+            <!-- 02. Performance Targets -->
+            <section id="benchmarks" class="border-t border-gray-800 pt-16 mb-20">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span class="text-accent-blue font-mono mr-3 text-lg">02.</span>
+                    Performance Targets
+                </h2>
+                <p class="text-gray-400 mb-8">
+                    Our initial internal validation aims to achieve the following performance metrics compared to legacy Explicit FEA solvers.
+                </p>
+                <div class="overflow-hidden rounded-lg border border-gray-800">
+                    <table class="w-full text-left text-sm text-gray-400">
+                        <thead class="bg-gray-900 text-gray-200 uppercase font-mono text-xs">
+                            <tr>
+                                <th class="px-6 py-4">Metric</th>
+                                <th class="px-6 py-4">Traditional FEA</th>
+                                <th class="px-6 py-4 text-accent-blue bg-accent-blue/5">Kortexis Goal</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800 bg-gray-900/20">
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Compute Time</td>
+                                <td class="px-6 py-4">Hours (CPU Cluster)</td>
+                                <td class="px-6 py-4 text-white font-bold">&lt; 1 Second (Target, GPU)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Infrastructure</td>
+                                <td class="px-6 py-4">On-Prem HPC</td>
+                                <td class="px-6 py-4 text-white font-bold">Cloud-Native Container</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Validation</td>
+                                <td class="px-6 py-4">Physics-Verified</td>
+                                <td class="px-6 py-4 text-white font-bold">Ongoing Internal Testing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 03. Enterprise Deployment Architecture -->
+            <section id="stack" class="border-t border-gray-800 pt-16">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span class="text-accent-blue font-mono mr-3 text-lg">03.</span>
                     Enterprise Deployment Architecture
                 </h2>
                 <p class="mb-6 text-gray-400">
@@ -94,57 +170,6 @@
                 </div>
             </section>
 
-            <section id="benchmarks" class="border-t border-gray-800 pt-16">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                    <span class="text-accent-blue font-mono mr-3 text-lg">02.</span>
-                    Performance Targets
-                </h2>
-                <p class="text-gray-400 mb-8">
-                    Our initial internal validation aims to achieve the following performance metrics compared to legacy Explicit FEA solvers.
-                </p>
-                <div class="overflow-hidden rounded-lg border border-gray-800 mb-20">
-                    <table class="w-full text-left text-sm text-gray-400">
-                        <thead class="bg-gray-900 text-gray-200 uppercase font-mono text-xs">
-                            <tr>
-                                <th class="px-6 py-4">Metric</th>
-                                <th class="px-6 py-4">Traditional FEA</th>
-                                <th class="px-6 py-4 text-accent-blue bg-accent-blue/5">Kortexis Goal</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-800 bg-gray-900/20">
-                            <tr>
-                                <td class="px-6 py-4 font-medium">Compute Time</td>
-                                <td class="px-6 py-4">Hours (CPU Cluster)</td>
-                                <td class="px-6 py-4 text-white font-bold">&lt; 1 Second (Target, GPU)</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 font-medium">Infrastructure</td>
-                                <td class="px-6 py-4">On-Prem HPC</td>
-                                <td class="px-6 py-4 text-white font-bold">Cloud-Native Container</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 font-medium">Validation</td>
-                                <td class="px-6 py-4">Physics-Verified</td>
-                                <td class="px-6 py-4 text-white font-bold">Ongoing Internal Testing</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="pt-8 border-t border-gray-800">
-                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                        <span class="text-accent-blue font-mono mr-3 text-lg">03.</span>
-                        Ground Truth Correlation
-                    </h2>
-                    <p class="text-gray-400 mb-8">
-                        Validation of the Kortexis surrogate model predicting B-Pillar Acceleration, Delta-V, and Dynamic Displacement in &lt;10ms vs. the OpenRadioss 2010 Toyota Yaris baseline.
-                    </p>
-                    <div class="rounded-xl border border-gray-800 bg-gray-900 overflow-hidden shadow-2xl">
-                        <img src="assets/demo_time_histories.png" alt="Ground Truth Correlation vs OpenRadioss" class="w-full h-auto">
-                    </div>
-                </div>
-            </section>
-
         </main>
     </div>
 
@@ -159,7 +184,11 @@
                   Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ
                 </p>
                 <p class="copyright">
-                  &copy; <script>document.write(new Date().getFullYear())</script> Kortexis Ltd. All rights reserved.
+                    &copy; <script>document.write(new Date().getFullYear())</script> Kortexis Ltd. All rights reserved.<br>
+                    <span class="text-[10px] text-gray-500 mt-2 block leading-relaxed">
+                        &copy; 2025 NVIDIA, the NVIDIA logo, NVIDIA Inception, and NVIDIA Omniverse are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.<br>
+                        Google and the Google logo are trademarks of Google LLC.
+                    </span>
                 </p>
             </div>
             <div class="footer-links">

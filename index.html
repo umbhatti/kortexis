@@ -32,12 +32,34 @@
     <!-- Main Content Container -->
     <main class="flex-grow flex flex-col items-center justify-center p-4 pb-12">
 
-        <!-- Header / Logo Placeholder -->
+        <!-- Header / Logo -->
         <nav class="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center py-6 px-4 absolute top-0 left-0 right-0 z-50">
-             <div class="text-accent-blue text-2xl font-mono font-medium tracking-wider opacity-90 mb-4 md:mb-0">
-                <a href="index.html">KORTEXIS</a>
-            </div>
-            <div class="flex space-x-6 md:space-x-8 text-sm font-medium text-gray-400">
+        
+            <!-- KORTEXIS LOGO LOCKUP -->
+            <a href="index.html" class="flex items-center space-x-4 text-accent-blue hover:text-white transition duration-300 mb-4 md:mb-0 group">
+                
+                <!-- The Solid Cyan Mesh 'K' SVG Icon -->
+                <svg class="w-12 h-12 md:w-16 md:h-16 transform group-hover:scale-105 transition duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Structural Spine -->
+                    <rect x="20" y="15" width="16" height="70" rx="2" fill="currentColor" />
+                    <!-- Top Mesh Node -->
+                    <circle cx="75" cy="25" r="6" fill="currentColor" />
+                    <!-- Bottom Mesh Node -->
+                    <circle cx="75" cy="75" r="6" fill="currentColor" />
+                    <!-- Middle Intersection Node -->
+                    <circle cx="45" cy="50" r="6" fill="currentColor" />
+                    <!-- Connecting Wireframe Lines -->
+                    <path d="M36 45 L70 28" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                    <path d="M36 55 L70 72" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                </svg>
+                
+                <!-- The Wordmark -->
+                <span class="text-4xl md:text-5xl font-mono font-bold tracking-widest opacity-90 group-hover:opacity-100 transition-opacity">
+                    KORTEXIS
+                </span>
+            </a>
+    
+            <div class="flex space-x-6 md:space-x-8 text-sm font-medium text-gray-400 mt-4 md:mt-0">
                 <a href="technology.html" class="hover:text-accent-blue transition">Technology</a>
                 <a href="about.html" class="hover:text-accent-blue transition">Company</a>
                 <a href="mailto:info@kortexis.com" class="hover:text-white transition">Contact</a>
@@ -45,7 +67,7 @@
         </nav>
 
         <!-- 1. Primary Headline & Tagline -->
-        <div class="text-center max-w-4xl pt-24 pb-6">
+        <div class="text-center max-w-4xl pt-40 pb-6">
             <h1 class="text-4xl sm:text-5xl md:text-7xl font-semibold leading-tight tracking-tight mb-4">
                 AI Crash Simulation in Milliseconds
             </h1>
@@ -59,6 +81,24 @@
             <img src="assets/Yaris_80ms_Animation.gif" 
                  alt="Toyota Yaris OpenRadioss Surrogate Inference" 
                  class="w-full h-auto object-contain border-2 border-accent-blue/50 rounded-xl bg-gray-900 shadow-2xl">
+        </div>
+     
+        <!-- Trust Badges -->
+        <div class="max-w-5xl w-full px-4 mb-20 flex flex-col items-center justify-center border-y border-gray-800 py-12 bg-gray-900/20">
+            <p class="text-sm text-gray-500 uppercase tracking-widest font-semibold mb-10">Backed By & Proud Members Of</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+                
+                <!-- NVIDIA Inception Logo -->
+                <img src="assets/nvidia-inception-program-badge-rgb-for-screen.svg" 
+                     alt="NVIDIA Inception Program" 
+                     class="h-16 md:h-24">
+                
+                <!-- Google for Startups Logo -->
+                <img src="assets/Google_for_Startups_logo.svg" 
+                     alt="Google for Startups" 
+                     class="h-10 md:h-16 bg-white/90 px-5 py-2.5 rounded-lg">
+                     
+            </div>
         </div>
 
         <!-- 3. Product & Team -->
@@ -212,7 +252,11 @@
                   Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ
                 </p>
                 <p class="copyright">
-                  &copy; <script>document.write(new Date().getFullYear())</script> Kortexis Ltd. All rights reserved.
+                    &copy; <script>document.write(new Date().getFullYear())</script> Kortexis Ltd. All rights reserved.<br>
+                    <span class="text-[10px] text-gray-500 mt-2 block leading-relaxed">
+                        &copy; 2025 NVIDIA, the NVIDIA logo, NVIDIA Inception, and NVIDIA Omniverse are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.<br>
+                        Google and the Google logo are trademarks of Google LLC.
+                    </span>
                 </p>
             </div>
             <div class="footer-links">

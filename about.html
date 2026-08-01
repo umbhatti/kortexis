@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kortexis | Company</title>
+    <title>Kortexis</title>
     
+    <!-- Google Fonts: Inter (Sans) and Fira Code (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
                     colors: {
-                        'primary-dark': '#030712', 
-                        'accent-blue': '#22D3EE', 
+                        'primary-dark': '#030712',
+                        'accent-blue': '#22D3EE',
                     },
                 }
             }
@@ -21,33 +31,29 @@
     </script>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.css">
 </head>
+
 <body class="font-sans text-white min-h-screen flex flex-col justify-between bg-primary-dark">
 
     <nav class="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center py-6 px-4 absolute top-0 left-0 right-0 z-50">
-        
-        <!-- KORTEXIS LOGO LOCKUP -->
-        <a href="index.html" class="flex items-center space-x-4 text-accent-blue hover:text-white transition duration-300 mb-4 md:mb-0 group">
+    
+        <!-- UNIFIED KORTEXIS LOGO -->
+        <a href="index.html" class="flex items-center hover:opacity-80 transition duration-300 mb-4 md:mb-0 group">
             
-            <!-- The Solid Cyan Mesh 'K' SVG Icon -->
-            <svg class="w-12 h-12 md:w-16 md:h-16 transform group-hover:scale-105 transition duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Structural Spine -->
-                <rect x="20" y="15" width="16" height="70" rx="2" fill="currentColor" />
-                <!-- Top Mesh Node -->
-                <circle cx="75" cy="25" r="6" fill="currentColor" />
-                <!-- Bottom Mesh Node -->
-                <circle cx="75" cy="75" r="6" fill="currentColor" />
-                <!-- Middle Intersection Node -->
-                <circle cx="45" cy="50" r="6" fill="currentColor" />
-                <!-- Connecting Wireframe Lines -->
-                <path d="M36 45 L70 28" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
-                <path d="M36 55 L70 72" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+            <!-- The Standalone SVG -->
+            <svg class="h-10 md:h-16 w-auto text-accent-blue transform group-hover:scale-105 transition duration-300" viewBox="0 0 370 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Mesh Icon -->
+                <rect x="0" y="0" width="16" height="70" rx="2" fill="currentColor" />
+                <circle cx="55" cy="10" r="6" fill="currentColor" />
+                <circle cx="55" cy="60" r="6" fill="currentColor" />
+                <circle cx="25" cy="35" r="6" fill="currentColor" />
+                <path d="M16 30 L50 13" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                <path d="M16 40 L50 57" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                
+                <!-- Wordmark -->
+                <text x="90" y="58" fill="currentColor" font-family="'Fira Code', monospace" font-size="52" font-weight="700" letter-spacing="4">KORTEXIS</text>
             </svg>
-            
-            <!-- The Wordmark -->
-            <span class="text-4xl md:text-5xl font-mono font-bold tracking-widest opacity-90 group-hover:opacity-100 transition-opacity">
-                KORTEXIS
-            </span>
         </a>
 
         <div class="flex space-x-6 md:space-x-8 text-sm font-medium text-gray-400 mt-4 md:mt-0">
